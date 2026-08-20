@@ -129,33 +129,6 @@ return array(
 
 ---
 
-## Importing the Package
-
-### Via MODX Manager
-
-1. Copy the `.transport.zip` file to `core/packages/` on the target server.
-2. Go to **Manager → Extras → Installer**.
-3. Click **Scan for packages** — the package will appear in the list.
-4. Click **Install** and follow the prompts.
-
-### Via CLI (import.php)
-
-```bash
-php vapor/import.php --core_path=/var/www/html/core/ --package=core/packages/your-package.transport.zip
-```
-
-### What happens during import
-
-The transport package installs in this order:
-
-1. **File vehicles** (`xPDOFileVehicle`) — copy `core/components/`, `assets/`, `manager/components/`, and `vapor/model/` to the target. The `resolve.vapor_model.php` resolver loads the `vaporVehicle` class.
-2. **Object vehicles** (`xPDOObjectVehicle`) — install all MODX core objects (settings, chunks, snippets, plugins, templates, TVs, resources, users, etc.).
-3. **Custom table vehicles** (`vaporVehicle`) — create and populate non-core tables (e.g., `seosuite_*`, `ms3_*`, `counters_*`). The `validate.truncate_tables.php` validator runs first to clear existing core tables.
-
-> 💡 The `vaporVehicle` class is available on the target even if Vapor isn't installed there — the class file is copied in step 1.
-
----
-
 ## Troubleshooting
 
 ### Review the Vapor log
