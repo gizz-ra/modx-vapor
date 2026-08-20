@@ -62,7 +62,6 @@ MODX Vapor — PHP-скрипт, который извлекает полный 
    ├── assets/
    └── vapor/          ← сюда
        ├── vapor.php
-       ├── import.php
        ├── model/
        └── scripts/
    ```
