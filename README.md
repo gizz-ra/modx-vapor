@@ -62,7 +62,6 @@ Typical use cases:
    ├── assets/
    └── vapor/          ← here
        ├── vapor.php
-       ├── import.php
        ├── model/
        └── scripts/
    ```
