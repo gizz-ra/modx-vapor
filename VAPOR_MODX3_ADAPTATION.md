@@ -454,6 +454,3 @@ Error 42S02: Table 'des1gner_stgizzatov.g177_ms3_customer_tokens' doesn't exist
   - `'vehicle_class' => 'vaporVehicle'` → `'vehicle_class' => '\vaporVehicle'` (FQN)
 - Пакет перегенерирован: `localhost-260819.1759.23-3.2.3-pl.transport.zip`
 - Манифест подтверждён: `'vehicle_class' => '\\vaporVehicle'`, `'vehicle_package' => ''`
-
-**Дополнительно исправлено в этот день:**
-- Плагин AdminTools (ID 4): `Attempt to read property "blocked" on null` — `$modx->user->Profile` равен `null` у анонимного пользователя. Добавлена проверка `$userProfile = $modx->user->Profile; ($userProfile && $userProfile->blocked)`. Код обновлён в БД (`seWEJyWn_site_plugins`) и в исходных файлах (`admintools/` и `admintools0/`). Убран лишний `<?php` из `plugincode` (вызывал `Parse error: unexpected token "<"` из-за двойного `<?php` в кэше).
